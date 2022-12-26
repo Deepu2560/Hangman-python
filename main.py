@@ -18,27 +18,27 @@ for _ in range(word_length):
 print(display)
 
 while not end_of_game:
-  guess = input("Guess a letter: ").lower()
+    guess = input("Guess a letter: ").lower()
 
-  if guess in display:
-      print(f"You have already guessed this letter: {guess}")
+    if guess in display:
+        print(f"You have already guessed this letter: {guess}")
 
-  for position in range(word_length):
-      letter = chosen_word[position]
-      if letter == guess:
-          display[position] = letter
+    for position in range(word_length):
+        letter = chosen_word[position]
+        if letter == guess:
+            display[position] = letter
 
-  if guess not in chosen_word:
-      lives -= 1
-      print(f"You guessed a wrong letter: {guess}")
-      if lives == 0:
-          end_of_game = True
-          print(f"You lose. The word was {chosen_word}")
+    if guess not in chosen_word:
+        lives -= 1
+        print(f"You guessed a wrong letter: {guess}")
+        if lives == 0:
+            end_of_game = True
+            print(f"You lose. The word was {chosen_word}")
 
-  print(f"{' '.join(display)}")
+    print(f"{' '.join(display)}")
 
-  if "_" not in display:
-      end_of_game = True
-      print("You win.")
+    if "_" not in display:
+        end_of_game = True
+        print("You win.")
 
-  print(stages[lives])
+    print(stages[lives])
